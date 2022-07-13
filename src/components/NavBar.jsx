@@ -9,7 +9,7 @@ const NavBar = ({title}) => {
             <nav className='navbar navbar-expand-lg navbar-light bg-light'>
                 <div className="container-fluid">
                     <a href="#" className="navbar-brand">{title}</a>
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
@@ -17,10 +17,10 @@ const NavBar = ({title}) => {
                             <a href="" className="nav-item nav-link active">Inicio</a>
                             <a href="" className="nav-item nav-link">Productos</a>
                             <a href="" className="nav-item nav-link">Contacto</a>
-                            <a href="" className="nav-item nav-link disabled" tabindex="-1">Preguntas</a>
+                            <a href="" className="nav-item nav-link disabled" tabIndex="-1">Preguntas</a>
                         </div>
                         <CartWidget/>
-                        <div class="navbar-nav ms-auto">
+                        <div className="navbar-nav ms-auto">
                             <a href="#" className="nav-item nav-link">Login</a>
                         </div>
                     </div>
