@@ -16,8 +16,7 @@ function App() {
     <>
       <NavBar title={data.title} />
       <Title/>
-      <ItemListContainer itemName={data.itemName} />
-
+      <ItemListContainer/>
     </>
   );
 }
