@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap"
 import ItemListContainer from "./components/ItemListContainer";
 import Title from './components/Title';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   const data = {
@@ -16,7 +17,8 @@ function App() {
     <>
       <NavBar title={data.title} />
       <Title/>
-      <ItemListContainer/>
+      {/* <ItemListContainer/> */}
+      <ItemDetailContainer/>
     </>
   );
 }
