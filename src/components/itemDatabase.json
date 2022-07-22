@@ -1,0 +1,85 @@
+[
+    {
+      "id": 1,
+      "name": "Zeus",
+      "type": "Remeras",
+      "typeID": 1,
+      "price": "$2000",
+      "stock": 10,
+      "img": "/imgs/blanca.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Poseidon",
+      "type": "Remeras",
+      "typeID": 1,
+      "price": "$2000",
+      "stock": 10,
+      "img": "/imgs/negra.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Hércules",
+      "type": "Remeras",
+      "typeID": 1,
+      "price": "$2000",
+      "stock": 10,
+      "img": "/imgs/gris.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Ares",
+        "type": "Buzos",
+        "typeID": 2,
+        "price": "$7000",
+        "stock": 10,
+        "img": "/imgs/buzoNegro.jpeg"
+      },
+    {
+        "id": 5,
+        "name": "Hermes",
+        "type": "Buzos",
+        "typeID": 2,
+        "price": "$7000",
+        "stock": 10,
+        "img": "/imgs/buzoBlanco.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "Apolo",
+        "type": "Buzos",
+        "typeID": 2,
+        "price": "$7000",
+        "stock": 10,
+        "img": "/imgs/buzoGris.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "Crono",
+        "type": "Pantalones",
+        "typeID": 3,
+        "price": "$8000",
+        "stock": 10,
+        "img": "/imgs/jean.jpeg"
+    },
+    {
+        "id": 8,
+        "name": "Atlas",
+        "type": "Pantalones",
+        "typeID": 3,
+        "price": "$8000",
+        "stock": 10,
+        "img": "/imgs/pantalonMilitar.jpeg"
+    },
+    {
+        "id": 9,
+        "name": "Ceo",
+        "type": "Pantalones",
+        "typeID": 3,
+        "price": "$8000",
+        "stock": 10,
+        "img": "/imgs/pantalonNegro.jpeg"
+    }
+
+
+  ]

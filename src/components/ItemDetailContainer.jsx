@@ -1,58 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
+import { useParams } from "react-router-dom";
+import itemDatabase from "./itemDatabase.json"
+
 
 const ItemDetailContainer = () => {
-      const itemDetailExample = [
-    {
-      id: 1,
-      name: "Zeus",
-      type: "Remera",
-      price: 2000,
-      stock: 10,
-      img: "/imgs/blanca.jpeg",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero"
-    },
+    const itemDetails = itemDatabase
+    const [item, setItem] = useState({});
+    const params = useParams();
 
-    // {
-    //   id: 2,
-    //   name: "Poseidon",
-    //   type: "Remera",
-    //   price: "$2000",
-    //   stock: 10,
-    //   img: "/imgs/negra.jpeg",
-    // },
-    // {
-    //   id: 3,
-    //   name: "Hércules",
-    //   type: "Remera",
-    //   price: "$2000",
-    //   stock: 10,
-    //   img: "/imgs/gris.jpeg",
-    // },
-  ]
-    const [items, setItems] = useState([]);
-
-    useEffect(
-      () => {
-        const promiseItems = new Promise((resolve, reject) => {
-          setTimeout(
-            () => {
-              resolve(itemDetailExample);
-             },
-          2000);
+    const promise = new Promise((res, rej) => {
+        setTimeout(() => res(itemDetails), 2000);
+      });
+    
+      useEffect(() => {
+        promise.then((response) => {
+          const foundItem = response.filter((item) => item.id == params.id);
+          setItem(foundItem[0]);
         });
-        promiseItems.then(
-          (respuesta) => {
-            setItems (itemDetailExample);
-          }
-        )
-      },
-      []
-    )
+      }, []);
+
     return ( 
-        items.map(
-            cadaItem => <ItemDetail key={cadaItem.id} name={cadaItem.name} type={cadaItem.type} price={cadaItem.price} img={cadaItem.img} stock={cadaItem.stock} info={cadaItem.info}/>
-        )
+        <ItemDetail item={item} />
     )
 }
  

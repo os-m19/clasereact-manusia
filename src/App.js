@@ -6,19 +6,25 @@ import "bootstrap"
 import ItemListContainer from "./components/ItemListContainer";
 import Title from './components/Title';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 
 function App() {
-  const data = {
-    title: "Mi Tienda",
+  const dataStore = {
+    title: "GREEk",
     amount: 2,
     itemName: "Camisa",
   };
   return (
     <>
-      <NavBar title={data.title} />
-      <Title/>
-      {/* <ItemListContainer/> */}
-      <ItemDetailContainer/>
+    <BrowserRouter>
+      <NavBar title={dataStore.title} />
+      {/* <Title/> */}
+      <Routes>
+        <Route index element={<ItemListContainer/>}/>
+        <Route path="/category/:typeID" element={<ItemListContainer/>}/>
+        <Route path="item/:id" element={<ItemDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }

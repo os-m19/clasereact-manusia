@@ -1,4 +1,6 @@
-const ItemDetail = ({name, type, price, img, stock, info}) => {
+const ItemDetail = ({item}) => {
+
+    const { name, price, stock, img, type, info } = item;
     return ( <>
      <section className="py-5">
             <div className="container px-4 px-lg-5 my-5">
@@ -8,8 +10,8 @@ const ItemDetail = ({name, type, price, img, stock, info}) => {
                         <h4 className="medium mb-1">{type}</h4>
                         <h1 className="display-5 fw-bolder">{name}</h1>
                         <div className="fs-5 mb-5">
-                            <span className="text-decoration-line-through">$2200</span>
-                            <span>${price}</span>
+                            {/* <span className="text-decoration-line-through">$2200</span> */}
+                            <span>{price}</span>
                         </div>
                         <p className="lead">{info}</p>
                         <div className="d-flex">
