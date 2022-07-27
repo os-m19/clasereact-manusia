@@ -36,55 +36,12 @@ const ItemListContainer = (props) => {
 
   return (
     <>
-      <ItemList items={items}/>
+      <h2 className="text-center mt-5 mb-5 display-3"><strong>Catálogo</strong></h2>
+      <div className='row justify-content-center mb-5'>
+        <ItemList items={items}/>
+      </div>  
     </>
   );
 };
   
   export default ItemListContainer;
-
-/* 
-<Link to={"/nav"}
-
-Ruta con parametros
-<Route path="/category/:type" />
-
-Hook
-import {useParams} from "react-router-dom"
-
-const {type} = useParams()
-
-const [items, setItems] = useState([]);
-
-useEffect(
-  () => {
-    const promiseItems = new Promise((resolve, reject) => {
-      setTimeout(
-        () => {
-          resolve(itemDetailExample);
-          },
-      2000);
-    });
-    promiseItems.then(
-      (respuesta) => {
-        const products= respuesta;
-        if (type){
-          setItems (itemDetailExample.filter(product=> product.type));
-        }else{
-          setItems(products)
-        }
-      }
-    )
-  },
-  [name]
-)
-return ( 
-    items.map(
-        cadaItem => <ItemDetail key={cadaItem.id} name={cadaItem.name} type={cadaItem.type} price={cadaItem.price} img={cadaItem.img} stock={cadaItem.stock} info={cadaItem.info}/>
-    )
-)
-
-const {id} = useParams()
-<Route path="/details/:id" />
-
-*/ 
