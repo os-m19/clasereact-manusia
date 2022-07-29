@@ -1,15 +1,19 @@
-import {useState} from "react"
+import {useState, useContext} from "react"
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
 
 
 const ItemDetail = ({item}) => {
 
-    const [amount, setAmount] = useState(0);
-    const { name, price, stock, img, type, info } = item;
-    const onAdd =(amount) => {
-        setAmount ( amount);
-    }
+    const { setCartItems, addItem } = useContext(CartContext)
+    const { name, price, stock, img, type, info, amount} = item;
+    const [count, setCount] = useState(0);
+    const onAdd =(count) => {
+        setCount ( count);
+        item.amount = count
+        addItem(item)
+    };
     return ( <>
      <section className="py-5">
             <div className="container px-4 px-lg-5 my-5">
@@ -19,18 +23,11 @@ const ItemDetail = ({item}) => {
                         <h4 className="medium mb-1">{type}</h4>
                         <h1 className="display-5 fw-bolder">{name}</h1>
                         <div className="fs-5 mb-5">
-                            {/* <span className="text-decoration-line-through">$2200</span> */}
                             <span>{price}</span>
                         </div>
                         <p className="lead">{info}</p>
                         <div className="d-flex">
-                            {/* <input className="form-control text-center me-3" id="inputQuantity" type="num" defaultValue="1" style={{maxWidth: "3rem"}} />
-                            <button className="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i className="bi-cart-fill me-1"></i>
-                                Add to cart
-                            </button> */}
-                            {amount == 0 ? <ItemCount stock={stock} initial={0} onAdd={onAdd}/> : <h1>{amount} artículos añadidos</h1> }
-                            
+                            {count == 0 ? <ItemCount count={count} stock={stock} initial={0} onAdd={onAdd}/> : <h1>{count} artículos añadidos</h1> }
                         </div>
                         <div className="d-flex">
                             <p className="mt-3" style={{color: "green"}}>Available stock: {stock}</p>

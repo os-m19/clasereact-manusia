@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import itemDatabase from "./itemDatabase.json"
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({setAmountItems}) => {
     const itemDetails = itemDatabase
     const [item, setItem] = useState({});
     const params = useParams();
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
       }, []);
 
     return ( 
-        <ItemDetail item={item} />
+        <ItemDetail setAmountItems={setAmountItems} item={item} />
     )
 }
  
