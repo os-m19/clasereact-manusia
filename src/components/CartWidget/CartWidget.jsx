@@ -6,6 +6,10 @@ import { CartContext } from "../../contexts/CartContext";
 
 const CartWidget = ({amountItems}) => {
     const {cartItems} = useContext(CartContext)
+
+    if (cartItems.length === 0)
+    return <></>
+    
     return (
       <div className="ps-4">
         <Link to="/cart" className="text-decoration-none">
